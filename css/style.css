@@ -268,7 +268,7 @@ h6 {
   list-style: none;
 }
 
-.main-nav>ul>li {
+.main-nav > ul > li {
   position: relative;
   white-space: nowrap;
   float: left;
@@ -287,8 +287,8 @@ h6 {
 }
 
 .main-nav a:hover,
-.main-nav .active>a,
-.main-nav li:hover>a {
+.main-nav .active > a,
+.main-nav li:hover > a {
   color: #1bb1dc;
   text-decoration: none;
 }
@@ -307,7 +307,7 @@ h6 {
   transition: ease all 0.3s;
 }
 
-.main-nav .drop-down:hover>ul {
+.main-nav .drop-down:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -327,12 +327,12 @@ h6 {
 }
 
 .main-nav .drop-down ul a:hover,
-.main-nav .drop-down ul .active>a,
-.main-nav .drop-down ul li:hover>a {
+.main-nav .drop-down ul .active > a,
+.main-nav .drop-down ul li:hover > a {
   color: #1bb1dc;
 }
 
-.main-nav .drop-down>a:after {
+.main-nav .drop-down > a:after {
   content: "\f107";
   font-family: FontAwesome;
   padding-left: 10px;
@@ -343,17 +343,17 @@ h6 {
   left: calc(100% - 30px);
 }
 
-.main-nav .drop-down .drop-down:hover>ul {
+.main-nav .drop-down .drop-down:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
 }
 
-.main-nav .drop-down .drop-down>a {
+.main-nav .drop-down .drop-down > a {
   padding-right: 35px;
 }
 
-.main-nav .drop-down .drop-down>a:after {
+.main-nav .drop-down .drop-down > a:after {
   content: "\f105";
   position: absolute;
   right: 15px;
@@ -389,13 +389,13 @@ h6 {
 }
 
 .mobile-nav a:hover,
-.mobile-nav .active>a,
-.mobile-nav li:hover>a {
+.mobile-nav .active > a,
+.mobile-nav li:hover > a {
   color: #8dc2fa;
   text-decoration: none;
 }
 
-.mobile-nav .drop-down>a:after {
+.mobile-nav .drop-down > a:after {
   content: "\f078";
   font-family: FontAwesome;
   padding-left: 10px;
@@ -403,11 +403,11 @@ h6 {
   right: 15px;
 }
 
-.mobile-nav .active.drop-down>a:after {
+.mobile-nav .active.drop-down > a:after {
   content: "\f077";
 }
 
-.mobile-nav .drop-down>a {
+.mobile-nav .drop-down > a {
   padding-right: 35px;
 }
 
@@ -543,7 +543,7 @@ h6 {
 #about .about-img img {
   width: 100%;
   border: 8px solid #fff;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #about .about-img img:hover {
@@ -559,9 +559,9 @@ h6 {
   width: 90%;
   height: 92%;
   z-index: -1;
-  content: '';
+  content: "";
   background-color: #ebf1fa;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 #about .about-img::after {
@@ -571,9 +571,9 @@ h6 {
   width: 90%;
   height: 92%;
   z-index: -1;
-  content: '';
+  content: "";
   background-color: #ebf1fa;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 /* Services Section
@@ -867,8 +867,18 @@ h6 {
   background: #42c3e8;
 }
 
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-preview:hover i,
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info .link-details:hover i {
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-preview:hover
+  i,
+#portfolio
+  .portfolio-item
+  .portfolio-wrap
+  .portfolio-info
+  .link-details:hover
+  i {
   color: #fff;
 }
 
@@ -1067,13 +1077,13 @@ h6 {
   border: 0;
   border-radius: 0px;
   box-shadow: 0 3px 0px 0 rgba(65, 62, 102, 0.08);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   padding: 36px 0;
   position: relative;
 }
 
 #pricing .card:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
