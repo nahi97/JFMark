@@ -707,12 +707,13 @@
             </div>
           </div>
         </div>
+        <br>
       </section>
       <!-- #about -->
             <!--==========================
       Features Section IT Services
     ============================-->
-    <section id="features">
+    <section id="it_services">
       <div class="container">
         <header class="section-header">
           <h3 class="section-title">IT services</h3>
@@ -756,10 +757,10 @@
       <!--==========================
       Pricing Section
     ============================-->
-      <section id="pricing" class="wow fadeInUp section-bg">
+      <section id="training" class="wow fadeInUp section-bg">
         <div class="container">
           <header class="section-header">
-            <h4>Training</h4>
+            <h3 class="section-title">Training</h3>
             <p>
               We provide basic training for job seekers and workplaces which
               want to train their employee.
@@ -782,7 +783,7 @@
                     <li class="list-group-item">Powerpoint</li>
                     <li class="list-group-item">Microsoft office</li>
                   </ul>
-                  <a href="#" class="btn">Choose Plan</a>
+                  <a href="#footer" class="btn">Choose Plan</a>
                 </div>
               </div>
             </div>
@@ -803,7 +804,7 @@
                     <li class="list-group-item">Management and leadership</li>
                     <!-- <li class="list-group-item">Project management</li> -->
                   </ul>
-                  <a href="#" class="btn">Choose Plan</a>
+                  <a href="#footer" class="btn">Choose Plan</a>
                 </div>
               </div>
             </div>
@@ -1019,6 +1020,7 @@
             expression that uniquely defines your organization in the marketplace.
           </p>
         </div>
+       
       </section>
 
       <!--==========================
@@ -1157,7 +1159,7 @@
         </div>
       </section>
       <!-- #faq -->
-    </main> -->
+    </main> 
 
     <!--==========================
     Footer
@@ -1166,7 +1168,44 @@
       <div class="footer-top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6">
+            
+          <div class="col-lg-6">
+
+            <div class="form">
+
+              <h3><b>Send us a message</b></h3>
+              <form action="https://formsubmit.co/jfmarkcommunication@gmail.com" class="customform text-black" role="form" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                    data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                    data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required"
+                    data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+
+                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+              </form>
+              <br>
+            </div>
+
+          </div>
+<div class="col-lg-6">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="footer-info">
@@ -1191,18 +1230,6 @@
                 </div>
 
                 <div class="col-sm-6">
-                  <!--
-                <div class="footer-links">
-                  <h4>Useful Links</h4>
-                  <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Terms of service</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                  </ul>
-                </div>
--->
                   <div class="footer-links">
                     <h4>Contact Us</h4>
                     <p>
@@ -1232,45 +1259,7 @@
                 </div>
               </div>
             </div>
-            <!--
-          <div class="col-lg-6">
 
-            <div class="form">
-
-              <h4>Send us a message</h4>
-              <p>Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam similique
-                commodi harum aut temporibus.</p>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                    data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                    data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required"
-                    data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
-
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
-              </form>
-            </div>
-
-          </div>
--->
           </div>
         </div>
       </div>
