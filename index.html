@@ -2,18 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JFMark</title>
+    <title>JFMark | Business Documents, Marketing, IT &amp; Training</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
+    <meta
+      content="JFMark helps businesses grow with ready-to-use business documents, marketing and design services, IT services and employee training. Offices in Ontario, Canada and Yaoundé, Cameroon."
+      name="description"
+    />
+    <meta content="#413e66" name="theme-color" />
+
+    <!-- Apply the saved (or system) colour theme before anything is drawn, to avoid a white flash -->
+    <script>
+      (function () {
+        var theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "dark" && theme !== "light") {
+          theme =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
 
     <!-- Favicons -->
-    <link href="img/logo/2 transpa.png.png" rel="icon" />
-    <link href="img/logo/2 transpa.png.png" rel="apple-touch-icon" />
+    <link href="img/favicon.png" rel="icon" type="image/png" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Montserrat:300,400,500,600,700&display=swap"
       rel="stylesheet"
     />
 
@@ -24,11 +47,13 @@
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
     <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <!-- Owl Carousel is only needed if the Testimonials/Clients carousels below are re-enabled:
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" /> -->
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/dark-mode.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -39,12 +64,13 @@
       <div id="topbar">
         <div class="container">
           <div class="social-links">
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <!-- Add Twitter / Facebook / LinkedIn links here once real profile URLs exist -->
             <a
               href="https://www.instagram.com/jfmarkservices/"
               class="instagram"
+              target="_blank"
+              rel="noopener"
+              aria-label="JFMark on Instagram"
               ><i class="fa fa-instagram"></i
             ></a>
           </div>
@@ -54,10 +80,25 @@
       <div class="container">
         <div class="logo float-left">
           <!-- <h1 class="text-light"><a href="#intro" class="scrollto"><span>JFMark</span></a></h1> -->
-          <a href="#header" class="scrollto"
-            ><img src="img/logo/2 transpa.png" alt="" class="img-fluid"
+          <a href="#intro" class="scrollto"
+            ><img
+              src="img/logo/logo.png"
+              alt="JFMark home"
+              width="91"
+              height="26"
+              class="img-fluid"
           /></a>
         </div>
+
+        <button
+          type="button"
+          class="theme-toggle"
+          aria-label="Switch to dark mode"
+          title="Switch to dark mode"
+        >
+          <i class="fa fa-moon-o" aria-hidden="true"></i>
+          <i class="fa fa-sun-o" aria-hidden="true"></i>
+        </button>
 
         <nav class="main-nav float-right d-none d-lg-block">
           <ul>
@@ -77,7 +118,7 @@
                     <li><a href="#portfolio">Documents</a></li>
                     <li><a href="#features">Marketing</a></li>
                     <li><a href="#it_services">IT services</a></li>
-                    <li><a href="#pricing">Training</a></li>
+                    <li><a href="#training">Training</a></li>
                   </ul>
                 </li>
               </ul>
@@ -98,10 +139,10 @@
               </ul>
             </li>
             <li class="drop-down">
-              <a href="#pricing">Training</a>
+              <a href="#training">Training</a>
               <ul>
-                <li><a href="#pricing">Software training</a></li>
-                <li><a href="#pricing">Business training</a></li>
+                <li><a href="#training">Software training</a></li>
+                <li><a href="#training">Business training</a></li>
               </ul>
             </li>
             <li><a href="#clients">How To Reach Us</a></li>
@@ -129,7 +170,13 @@
           </div>
 
           <div class="col-md-6 intro-img order-md-last order-first">
-            <img src="img/intro-img.svg" alt="" class="img-fluid" />
+            <img
+              src="img/intro-img.svg"
+              alt=""
+              width="1121"
+              height="852"
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>
@@ -145,7 +192,13 @@
           <div class="row">
             <div class="col-lg-5 col-md-6">
               <div class="about-img">
-                <img src="img/about-img.jpg" alt="" />
+                <img
+                  src="img/about-img.jpg"
+                  alt="The JFMark team at work"
+                  width="463"
+                  height="686"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -186,15 +239,21 @@
               media effectively can take time out of your day when you know you could invest elsewhere.
             </p>
             <p>
-              We definitely get you. Let us handle that for you so you’ll get back to do what you do best… Running Your Company!
-
+              We definitely get you. Let us handle that for you so you can get back to what you do best… running your company!
             </p>
           </header>
 
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-lg-6">
               <div class="why-us-img">
-                <img src="img/why-us.jpg" alt="" class="img-fluid" />
+                <img
+                  src="img/why-us.jpg"
+                  alt=""
+                  width="1024"
+                  height="543"
+                  loading="lazy"
+                  class="img-fluid"
+                />
               </div>
             </div>
 
@@ -243,7 +302,6 @@
                   </p>
                 </div>
               </div> -->
-            </div>
           </div>
         </div>
 
@@ -287,7 +345,7 @@
 
           <div class="row">
             <div
-              class="col-md-6 col-lg-4 wow bounceInUp"
+              class="col-md-6 col-lg-3 wow bounceInUp"
               data-wow-duration="1.4s"
             >
               <div class="box">
@@ -306,7 +364,7 @@
             </div>
 
             <div
-              class="col-md-6 col-lg-4 wow bounceInUp"
+              class="col-md-6 col-lg-3 wow bounceInUp"
               data-wow-delay="0.1s"
               data-wow-duration="1.4s"
             >
@@ -323,7 +381,7 @@
             </div>
 
             <div
-              class="col-md-6 col-lg-4 wow bounceInUp"
+              class="col-md-6 col-lg-3 wow bounceInUp"
               data-wow-delay="0.2s"
               data-wow-duration="1.4s"
             >
@@ -340,13 +398,13 @@
             </div>
 
             <div
-              class="col-md-6 col-lg-4 wow bounceInUp"
+              class="col-md-6 col-lg-3 wow bounceInUp"
               data-wow-delay="0.2s"
               data-wow-duration="1.4s"
             >
               <div class="box">
                 <div class="icon" style="background: #e1eeff">
-                  <i class="ion-ios-training-outline" style="color: #2282ff"></i>
+                  <i class="ion-ios-people-outline" style="color: #2282ff"></i>
                 </div>
                 <h4 class="title"><a href="#training">Training</a></h4>
                 <!-- <p class="description">
@@ -393,10 +451,10 @@
           <div class="row">
             <div class="col-lg-12">
               <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">Finance forms</li>
-                <li data-filter=".filter-card">Business forms</li>
-                <li data-filter=".filter-web">Legal documents</li>
+                <li data-filter="*" class="filter-active" role="button" tabindex="0" aria-pressed="true">All</li>
+                <li data-filter=".filter-app" role="button" tabindex="0" aria-pressed="false">Finance forms</li>
+                <li data-filter=".filter-card" role="button" tabindex="0" aria-pressed="false">Business forms</li>
+                <li data-filter=".filter-web" role="button" tabindex="0" aria-pressed="false">Legal documents</li>
               </ul>
             </div>
           </div>
@@ -404,20 +462,26 @@
           <div class="row portfolio-container">
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <div class="portfolio-wrap">
-                <img src="img/portfolio/app1.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/app1.jpg"
+                  width="873"
+                  height="885"
+                  class="img-fluid"
+                  alt="Invoice and Receipts"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Invoice and Receipts</p>
                   <div>
                     <a
                       href="img/portfolio/app1.jpg"
                       data-lightbox="portfolio"
-                      data-title="App 1"
+                      data-title="Invoice and Receipts"
                       class="link-preview"
-                      title="Preview"
+                      title="Preview" aria-label="Preview Invoice and Receipts"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Invoice and Receipts"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -430,7 +494,14 @@
               data-wow-delay="0.1s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/web3.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/web3.jpg"
+                  width="800"
+                  height="536"
+                  class="img-fluid"
+                  alt="Web"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
                   <h4><a href="#">Web 3</a></h4>
                   <p>Web</p>
@@ -439,11 +510,11 @@
                       href="img/portfolio/web3.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Web 3"
-                      title="Preview"
+                      data-title="Web"
+                      title="Preview" aria-label="Preview Web"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Web"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -456,20 +527,26 @@
               data-wow-delay="0.2s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/app2.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/app2.jpg"
+                  width="800"
+                  height="450"
+                  class="img-fluid"
+                  alt="Income statements"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Income statements</p>
                   <div>
                     <a
                       href="img/portfolio/app2.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="App 2"
-                      title="Preview"
+                      data-title="Income statements"
+                      title="Preview" aria-label="Preview Income statements"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Income statements"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -479,20 +556,26 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-wrap">
-                <img src="img/portfolio/card2.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/card2.jpg"
+                  width="579"
+                  height="861"
+                  class="img-fluid"
+                  alt="Business plan"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Business plan</p>
                   <div>
                     <a
                       href="img/portfolio/card2.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Card 2"
-                      title="Preview"
+                      data-title="Business plan"
+                      title="Preview" aria-label="Preview Business plan"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Business plan"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -505,20 +588,26 @@
               data-wow-delay="0.1s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/web2.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/web2.jpg"
+                  width="582"
+                  height="870"
+                  class="img-fluid"
+                  alt="Agreements"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Agreements</p>
                   <div>
                     <a
                       href="img/portfolio/web2.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Web 2"
-                      title="Preview"
+                      data-title="Agreements"
+                      title="Preview" aria-label="Preview Agreements"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Agreements"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -531,7 +620,14 @@
               data-wow-delay="0.2s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/app3.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/app3.jpg"
+                  width="800"
+                  height="529"
+                  class="img-fluid"
+                  alt="App"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
                   <h4><a href="#">App 3</a></h4>
                   <p>App</p>
@@ -540,11 +636,11 @@
                       href="img/portfolio/app3.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="App 3"
-                      title="Preview"
+                      data-title="App"
+                      title="Preview" aria-label="Preview App"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request App"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -554,20 +650,26 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-wrap">
-                <img src="img/portfolio/card1.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/card1.jpg"
+                  width="800"
+                  height="519"
+                  class="img-fluid"
+                  alt="Contracts"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Contracts</p>
                   <div>
                     <a
                       href="img/portfolio/card1.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Card 1"
-                      title="Preview"
+                      data-title="Contracts"
+                      title="Preview" aria-label="Preview Contracts"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Contracts"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -580,20 +682,26 @@
               data-wow-delay="0.1s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/card3.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/card3.jpg"
+                  width="800"
+                  height="531"
+                  class="img-fluid"
+                  alt="Policies"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Policies</p>
                   <div>
                     <a
                       href="img/portfolio/card3.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Card 3"
-                      title="Preview"
+                      data-title="Policies"
+                      title="Preview" aria-label="Preview Policies"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Policies"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -606,20 +714,26 @@
               data-wow-delay="0.1s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/app3.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/app3.jpg"
+                  width="800"
+                  height="529"
+                  class="img-fluid"
+                  alt="Human resources"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Human resources</p>
                   <div>
                     <a
                       href="img/portfolio/app3.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Card 3"
-                      title="Preview"
+                      data-title="Human resources"
+                      title="Preview" aria-label="Preview Human resources"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Human resources"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -632,20 +746,26 @@
               data-wow-delay="0.2s"
             >
               <div class="portfolio-wrap">
-                <img src="img/portfolio/web1.jpg" class="img-fluid" alt="" />
+                <img
+                  src="img/portfolio/web1.jpg"
+                  width="800"
+                  height="533"
+                  class="img-fluid"
+                  alt="Lease"
+                  loading="lazy"
+                />
                 <div class="portfolio-info">
-                  <h4><a href="#"></a></h4>
                   <p>Lease</p>
                   <div>
                     <a
                       href="img/portfolio/web1.jpg"
                       class="link-preview"
                       data-lightbox="portfolio"
-                      data-title="Web 1"
-                      title="Preview"
+                      data-title="Lease"
+                      title="Preview" aria-label="Preview Lease"
                       ><i class="ion ion-eye"></i
                     ></a>
-                    <a href="#" class="link-details" title="More Details"
+                    <a href="#footer" class="link-details scrollto" title="Request this document" aria-label="Request Lease"
                       ><i class="ion ion-android-open"></i
                     ></a>
                   </div>
@@ -665,35 +785,36 @@
           <header class="section-header">
             <h3 class="section-title">Marketing services</h3>
             <p>
-              Marketing is no rocket science, but it does require methodical work;That’s why we
+              Marketing is no rocket science, but it does require methodical work. That’s why we
               offer a robust and growing set of marketing services for every budget.
-            <br>
-              Our marketing services are a part of the overall strategy that we offer our clients to
-              expose their services, events and products.
-
+              <br />
+              Our marketing services are part of the overall strategy we offer our clients to
+              promote their services, events and products.
             </p>
           </header>
 
           <div class="row feature-item">
             <div class="col-lg-6 wow fadeInUp">
-              <img src="img/features-1.svg" class="img-fluid" alt="" />
+              <img src="img/features-1.svg" width="1014" height="770" loading="lazy" class="img-fluid" alt="" />
             </div>
 
             <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
               <h4>Design</h4>
               <p>It’s harder than ever to get the word out about your business without a visual.</p>
-              <p>◦ Flyer design</p>
-              <p>◦ Logo Design</p>
-              <p>◦ Brochure</p>
-              <p>◦ Posters</p>
-              <p>◦ Business Cards</p>
-              <p>◦ Infographics</p>
+              <ul class="feature-list">
+                <li>Flyer design</li>
+                <li>Logo design</li>
+                <li>Brochures</li>
+                <li>Posters</li>
+                <li>Business cards</li>
+                <li>Infographics</li>
+              </ul>
             </div>
           </div>
 
           <div class="row feature-item mt-5 pt-5">
             <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-              <img src="img/features-2.svg" class="img-fluid" alt="" />
+              <img src="img/features-2.svg" width="1146" height="771" loading="lazy" class="img-fluid" alt="" />
             </div>
 
             <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
@@ -701,75 +822,80 @@
               <p>
                 We will create your content strategy to actively engage your community on all the platforms.
               </p>
-              <p>◦ Social Media Marketing</p>
-              <p>◦ Email Marketing</p>
-              <p>◦ Social media management</p>
+              <ul class="feature-list">
+                <li>Social media marketing</li>
+                <li>Email marketing</li>
+                <li>Social media management</li>
+              </ul>
             </div>
           </div>
         </div>
-        <br>
       </section>
-      <!-- #about -->
-            <!--==========================
-      Features Section IT Services
+      <!-- #features -->
+
+      <!--==========================
+      IT Services Section
     ============================-->
-    <section id="it_services">
-      <div class="container">
-        <header class="section-header">
-          <h3 class="section-title">IT services</h3>
-          <p>
-            Every organization has unique needs that need to be reflected within their technology which
-            demands concrete yet flexible strategies that can be easily maintained and utilized by
-            business professionals and their organizations.
-          </p>
-        </header>
-
-        <div class="row feature-item">
-          <div class="col-lg-6 wow fadeInUp">
-            <img src="img/features-1.svg" class="img-fluid" alt="" />
-          </div>
-
-          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-            <h4> Websites</h4>
-            <p>Technology is integral to business operations. business IT is required to constantly
-              grow and adapt to meet the shifting needs of industry.</p>
-            <p>◦ Web Design & Programming</p>
-            <p>◦ Search Engine Optimization (SEO)</p>
-            <p>◦ E-Commerce</p>
-          </div>
-        </div>
-
-        <div class="row feature-item mt-5 pt-5">
-          <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="img/features-2.svg" class="img-fluid" alt="" />
-          </div>
-
-          <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-            <h4>Content Marketing</h4>
-            <p>We can also help you procure the technology you need to help your business. We
-              work with our partners to find you the hardware or software you require.
+      <section id="it_services" class="section-bg">
+        <div class="container">
+          <header class="section-header">
+            <h3 class="section-title">IT services</h3>
+            <p>
+              Every organization has unique needs that should be reflected in its technology. That
+              demands concrete yet flexible strategies that business professionals can easily
+              maintain and use.
             </p>
+          </header>
+
+          <div class="row feature-item">
+            <div class="col-lg-6 wow fadeInUp">
+              <img src="img/features-1.svg" width="1014" height="770" loading="lazy" class="img-fluid" alt="" />
+            </div>
+
+            <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+              <h4>Websites</h4>
+              <p>Technology is integral to business operations. Business IT has to constantly
+                grow and adapt to meet the shifting needs of industry.</p>
+              <ul class="feature-list">
+                <li>Web design &amp; programming</li>
+                <li>Search engine optimization (SEO)</li>
+                <li>E-commerce</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row feature-item mt-5 pt-5">
+            <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
+              <img src="img/features-2.svg" width="1146" height="771" loading="lazy" class="img-fluid" alt="" />
+            </div>
+
+            <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
+              <h4>Hardware &amp; Software</h4>
+              <p>We can also help you procure the technology you need to help your business. We
+                work with our partners to find you the hardware or software you require.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- #it_services -->
 
       <!--==========================
       Pricing Section
     ============================-->
-      <section id="training" class="wow fadeInUp section-bg">
+      <section id="training" class="wow fadeInUp">
         <div class="container">
           <header class="section-header">
             <h3 class="section-title">Training</h3>
             <p>
-              We provide basic training for job seekers and workplaces which
-              want to train their employee.
+              We provide practical training for job seekers, and for workplaces that
+              want to train their employees.
             </p>
           </header>
 
-          <div class="row flex-items-xs-middle flex-items-xs-center">
+          <div class="row justify-content-center">
             <!-- Basic Plan  -->
-            <div class="col-xs-12 col-lg-4">
+            <div class="col-md-6 col-lg-4 mb-4">
               <div class="card">
                 <!--
               <div class="card-header">
@@ -780,16 +906,16 @@
                   <h4 class="card-title">Software training</h4>
                   <ul class="list-group">
                     <li class="list-group-item">Excel</li>
-                    <li class="list-group-item">Powerpoint</li>
-                    <li class="list-group-item">Microsoft office</li>
+                    <li class="list-group-item">PowerPoint</li>
+                    <li class="list-group-item">Microsoft Office</li>
                   </ul>
-                  <a href="#footer" class="btn">Choose Plan</a>
+                  <a href="#footer" class="btn scrollto">Ask about this training</a>
                 </div>
               </div>
             </div>
 
             <!-- Regular Plan  -->
-            <div class="col-xs-12 col-lg-4">
+            <div class="col-md-6 col-lg-4 mb-4">
               <div class="card">
                 <!--
               <div class="card-header">
@@ -804,13 +930,13 @@
                     <li class="list-group-item">Management and leadership</li>
                     <!-- <li class="list-group-item">Project management</li> -->
                   </ul>
-                  <a href="#footer" class="btn">Choose Plan</a>
+                  <a href="#footer" class="btn scrollto">Ask about this training</a>
                 </div>
               </div>
             </div>
 
             <!-- Premium Plan  
-          <div class="col-xs-12 col-lg-4">
+          <div class="col-md-6 col-lg-4 mb-4">
             <div class="card">
               <div class="card-header">
                 <h3><span class="currency">$</span>39<span class="period">/month</span></h3>
@@ -1019,8 +1145,12 @@
             We'd love to learn about what you do and discuss how we can help create a brand
             expression that uniquely defines your organization in the marketplace.
           </p>
+          <p class="reach-us-actions">
+            <a href="#footer" class="btn-cta scrollto">Send us a message</a>
+            <a href="tel:+17059884037" class="btn-cta btn-cta-outline">Call Canada</a>
+            <a href="tel:+237656578755" class="btn-cta btn-cta-outline">Call Cameroon</a>
+          </p>
         </div>
-       
       </section>
 
       <!--==========================
@@ -1159,7 +1289,7 @@
         </div>
       </section>
       <!-- #faq -->
-    </main> 
+    </main>
 
     <!--==========================
     Footer
@@ -1169,97 +1299,81 @@
         <div class="container">
           <div class="row">
             
-          <div class="col-lg-6">
+            <div class="col-lg-6">
+              <div class="form">
+                <h3><b>Send us a message</b></h3>
+                <form
+                  action="https://formsubmit.co/jfmarkcommunication@gmail.com"
+                  class="customform text-black"
+                  method="POST"
+                >
+                  <div class="form-group">
+                    <label for="name" class="sr-only">Your name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                      autocomplete="name" minlength="2" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Your email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                      autocomplete="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="subject" class="sr-only">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea class="form-control" name="message" id="message" rows="5"
+                      placeholder="Message" required></textarea>
+                  </div>
+                  <!-- Spam protection: real visitors never fill this hidden field -->
+                  <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
 
-            <div class="form">
-
-              <h3><b>Send us a message</b></h3>
-              <form action="https://formsubmit.co/jfmarkcommunication@gmail.com" class="customform text-black" role="form" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                    data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                    data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required"
-                    data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
-
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-
-                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
-              </form>
-              <br>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+                <br />
+              </div>
             </div>
 
-          </div>
-<div class="col-lg-6">
+            <div class="col-lg-6">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="footer-info">
                     <h3>JFMark</h3>
                     <p>
                       Ontario, Canada <br />
-                      <strong>Phone:</strong> +1 (705)988-4037<br />
+                      <strong>Phone:</strong> <a href="tel:+17059884037">+1 (705) 988-4037</a><br />
                       <strong>Email:</strong>
-                      jfmarkcommunication@gmail.com<br />
+                      <a href="mailto:jfmarkcommunication@gmail.com">jfmarkcommunication@gmail.com</a><br />
                     </p>
                   </div>
-                  <!--
-                <div class="footer-newsletter">
-                  <h4>Our Newsletter</h4>
-                  <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum
-                    dolore legam minim quorum culpa amet magna export quem.</p>
-                  <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
-                  </form>
-                </div>
--->
                 </div>
 
                 <div class="col-sm-6">
                   <div class="footer-links">
                     <h4>Contact Us</h4>
                     <p>
-                      Yaoundé, Cameroun <br />
-                      <strong>Phone:</strong> (+237)656578755<br />
+                      Yaoundé, Cameroon <br />
+                      <strong>Phone:</strong> <a href="tel:+237656578755">+237 656 578 755</a><br />
                       <strong>Email:</strong>
-                      jfmarkcommunication@gmail.com<br />
+                      <a href="mailto:jfmarkcommunication@gmail.com">jfmarkcommunication@gmail.com</a><br />
                     </p>
                   </div>
 
                   <div class="social-links">
-                    <a href="#" class="twitter"
-                      ><i class="fa fa-twitter"></i
-                    ></a>
-                    <a href="#" class="facebook"
-                      ><i class="fa fa-facebook"></i
-                    ></a>
                     <a
                       href="https://www.instagram.com/jfmarkservices/"
                       class="instagram"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="JFMark on Instagram"
                       ><i class="fa fa-instagram"></i
-                    ></a>
-                    <a href="#" class="linkedin"
-                      ><i class="fa fa-linkedin"></i
                     ></a>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -1272,24 +1386,21 @@
     </footer>
     <!-- #footer -->
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
+    <a href="#intro" class="back-to-top" aria-label="Back to top"><i class="fa fa-chevron-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/mobile-nav/mobile-nav.js"></script>
     <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+    <!--
+      Only needed if the commented-out sections above are re-enabled:
+      FAQ accordion          -> lib/bootstrap/js/bootstrap.bundle.min.js
+      Counters (Why Us)      -> lib/waypoints/waypoints.min.js + lib/counterup/counterup.min.js
+      Testimonials / Clients -> lib/owlcarousel/owl.carousel.min.js (+ its CSS in <head>)
+    -->
 
     <!-- Template Main Javascript File -->
     <script src="js/main.js"></script>

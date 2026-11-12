@@ -23,7 +23,6 @@ The project is organized into the following sections:
    - `css/style.css`: Main stylesheet.
    - `img/`: Directory containing images used in the website.
    - `lib/`: Directory containing libraries and plugins used in the website.
-   - `contactform/`: Directory containing the contact form script.
 
 ## Usage Instructions
 
@@ -33,13 +32,16 @@ The project is organized into the following sections:
 - **Website Content**: The `JFMark website content.docx` file contains the text content intended for the website. Customize it according to your requirements.
 
 ### Website Template
-1. **Setup**: Extract the contents of the `JFMark-master.zip` file to your web server directory.
-2. **Customization**: 
+1. **Run locally**: The site is plain HTML/CSS/JS with no build step. Open `index.html` directly, or serve the folder (for example `python -m http.server`) and visit `http://localhost:8000`.
+2. **Deploy**: The site is published with GitHub Pages; the `CNAME` file points it at `jfmark.com`.
+3. **Customization**:
    - Open `index.html` in a text editor and update the content as needed.
    - Modify `css/style.css` to change the styling of the website.
-   - Replace the images in the `img/` directory with your own images to personalize the website.
-3. **Contact Form**:
-   - The contact form script is located in the `contactform/` directory. Update the script as necessary to integrate it with your preferred email service or backend server.
+   - Replace the images in the `img/` directory with your own. Keep photos at most ~800px wide, and keep the `width`/`height` attributes in `index.html` in line with the real image size so the layout does not jump while the page loads.
+4. **Contact Form**:
+   - The form in the footer posts to [FormSubmit](https://formsubmit.co/), which forwards messages to the address in the form's `action` attribute. Validation is done by the browser (`required`, `type="email"`), so no extra script is needed.
+5. **Dark mode**: The sun/moon button in the header switches themes. First-time visitors get their system's light/dark setting; once they click, their choice is remembered in the browser. All dark colours live in `css/dark-mode.css` (palette variables at the top), so changing or removing dark mode only touches that file, the inline script in `<head>`, and the toggle code in `js/main.js`.
+6. **Optional sections**: Testimonials, Team, Clients, FAQ and counters are commented out in `index.html`. Their libraries (Owl Carousel, Waypoints/CounterUp, Bootstrap JS) are no longer loaded; the comment above `js/main.js` in `index.html` lists which script each section needs if you re-enable it.
 
 ### Project Features
 - **Responsive Design**: The website template is fully responsive and adapts to different screen sizes.

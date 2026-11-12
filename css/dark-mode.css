@@ -1,0 +1,321 @@
+/*--------------------------------------------------------------
+# Dark mode
+# Applied when <html data-theme="dark"> is set (see the inline script in
+# index.html <head> and the toggle in js/main.js). Only colours change here;
+# layout stays in style.css.
+--------------------------------------------------------------*/
+
+/* Theme toggle button (shown in both themes) */
+.theme-toggle {
+  float: right;
+  width: 38px;
+  height: 38px;
+  margin: 2px 0 0 10px;
+  padding: 0;
+  border: 2px solid rgba(65, 62, 102, 0.2);
+  border-radius: 50%;
+  background: transparent;
+  color: #413e66;
+  font-size: 17px;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  color: #1bb1dc;
+  border-color: #1bb1dc;
+}
+
+/* Show the icon for the theme you would switch TO */
+.theme-toggle .fa-sun-o,
+html[data-theme="dark"] .theme-toggle .fa-moon-o {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .fa-sun-o {
+  display: inline;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Tighten the top menu slightly so it still fits on one line next to the toggle */
+  .main-nav > ul > li > a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main-nav .drop-down > a:after {
+    padding-left: 6px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Sit just left of the fixed hamburger button */
+  .theme-toggle {
+    position: fixed;
+    top: 14px;
+    right: 58px;
+    z-index: 9998;
+    margin: 0;
+    float: none;
+  }
+}
+
+/* ---------- Palette ---------- */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --dm-bg: #16152a;
+  --dm-bg-alt: #1d1b36;
+  --dm-surface: #25233f;
+  --dm-border: #3a3760;
+  --dm-text: #c9c7e0;
+  --dm-muted: #a19ec4;
+  --dm-heading: #eeedfb;
+  --dm-accent: #1bb1dc;
+  --dm-accent-hover: #4fc9ec;
+}
+
+/* ---------- Base ---------- */
+html[data-theme="dark"] body {
+  background: var(--dm-bg);
+  color: var(--dm-text);
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] a:hover,
+html[data-theme="dark"] a:focus {
+  color: var(--dm-accent-hover);
+}
+
+html[data-theme="dark"] .section-bg {
+  background: var(--dm-bg-alt);
+}
+
+html[data-theme="dark"] .section-header h3 {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] .section-header p {
+  color: var(--dm-muted);
+}
+
+/* ---------- Header & navigation ---------- */
+html[data-theme="dark"] #header.header-scrolled,
+html[data-theme="dark"] #header.header-pages {
+  background-color: var(--dm-bg-alt);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* The logo is dark purple; give it a light backing so it stays readable */
+html[data-theme="dark"] #header .logo img {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 4px;
+  padding: 3px 6px;
+  box-sizing: content-box;
+}
+
+html[data-theme="dark"] #topbar .social-links a,
+html[data-theme="dark"] .main-nav a {
+  color: var(--dm-text);
+}
+
+html[data-theme="dark"] .main-nav a:hover,
+html[data-theme="dark"] .main-nav .active > a,
+html[data-theme="dark"] .main-nav li:hover > a,
+html[data-theme="dark"] #topbar .social-links a:hover {
+  color: var(--dm-accent);
+}
+
+html[data-theme="dark"] .main-nav .drop-down ul {
+  background: var(--dm-surface);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="dark"] .main-nav .drop-down ul a {
+  color: var(--dm-text);
+}
+
+html[data-theme="dark"] .main-nav .drop-down ul a:hover,
+html[data-theme="dark"] .main-nav .drop-down ul .active > a,
+html[data-theme="dark"] .main-nav .drop-down ul li:hover > a {
+  color: var(--dm-accent);
+}
+
+html[data-theme="dark"] .mobile-nav-toggle i {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] .mobile-nav {
+  background: rgba(22, 21, 42, 0.95);
+}
+
+html[data-theme="dark"] .theme-toggle {
+  color: #ffd76a;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+  color: #ffe9a8;
+  border-color: #ffd76a;
+}
+
+/* ---------- Intro ---------- */
+html[data-theme="dark"] #intro {
+  background: linear-gradient(160deg, #1d1b36 0%, #16152a 60%, #12233a 100%);
+}
+
+html[data-theme="dark"] #intro .intro-info h2 {
+  color: var(--dm-heading);
+}
+
+/* ---------- About ---------- */
+html[data-theme="dark"] #about .about-content h2 {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] #about .about-content h3 {
+  color: var(--dm-muted);
+}
+
+html[data-theme="dark"] #about .about-img img {
+  border-color: var(--dm-surface);
+}
+
+html[data-theme="dark"] #about .about-img::before,
+html[data-theme="dark"] #about .about-img::after {
+  background-color: var(--dm-bg-alt);
+}
+
+/* ---------- Why us ---------- */
+html[data-theme="dark"] #why-us .why-us-content .features p,
+html[data-theme="dark"] #why-us .counters span,
+html[data-theme="dark"] #why-us .counters p {
+  color: var(--dm-muted);
+}
+
+/* ---------- Services ---------- */
+html[data-theme="dark"] #services .box {
+  background: var(--dm-surface);
+  box-shadow: 0 10px 29px 0 rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] #services .title a {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] #services .box:hover .title a {
+  color: var(--dm-accent);
+}
+
+html[data-theme="dark"] #services .icon {
+  filter: brightness(0.9) saturate(0.9);
+}
+
+/* ---------- Documents (portfolio) ---------- */
+html[data-theme="dark"] #portfolio #portfolio-flters li {
+  color: var(--dm-text);
+}
+
+html[data-theme="dark"] #portfolio #portfolio-flters li:hover,
+html[data-theme="dark"] #portfolio #portfolio-flters li.filter-active {
+  color: var(--dm-accent);
+}
+
+/* ---------- Training cards ---------- */
+html[data-theme="dark"] #training .card,
+html[data-theme="dark"] #training .card .card-header,
+html[data-theme="dark"] #training .card .list-group-item {
+  background-color: var(--dm-surface);
+}
+
+html[data-theme="dark"] #training .card {
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] #training .card:hover {
+  box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="dark"] #training .card .card-title,
+html[data-theme="dark"] #training .card h3 {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] #training .card .list-group-item {
+  color: var(--dm-text);
+}
+
+/* ---------- Illustrations: tone down the bright pastel shapes slightly ---------- */
+html[data-theme="dark"] img[src$=".svg"] {
+  filter: brightness(0.88);
+}
+
+/* ---------- Testimonials / Team / FAQ (if re-enabled) ---------- */
+html[data-theme="dark"] #testimonials .testimonial-item h3,
+html[data-theme="dark"] #faq #faq-list a.collapsed {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] #testimonials .testimonial-item h4 {
+  color: var(--dm-muted);
+}
+
+html[data-theme="dark"] #faq #faq-list li {
+  border-bottom-color: var(--dm-border);
+}
+
+/* ---------- Footer & contact form ---------- */
+html[data-theme="dark"] #footer,
+html[data-theme="dark"] #footer .footer-top {
+  background: var(--dm-bg-alt);
+}
+
+html[data-theme="dark"] #footer .footer-top .footer-info h3,
+html[data-theme="dark"] #footer .footer-top h4,
+html[data-theme="dark"] #footer .footer-top .form label {
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] #footer .footer-top .footer-info p,
+html[data-theme="dark"] #footer .footer-top .footer-links ul a,
+html[data-theme="dark"] #footer .copyright {
+  color: var(--dm-text);
+}
+
+html[data-theme="dark"] #footer .footer-top .form input,
+html[data-theme="dark"] #footer .footer-top .form textarea,
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .form-control:focus {
+  background-color: var(--dm-surface);
+  border-color: var(--dm-border);
+  color: var(--dm-heading);
+}
+
+html[data-theme="dark"] #footer .footer-top .form input::placeholder,
+html[data-theme="dark"] #footer .footer-top .form textarea::placeholder {
+  color: var(--dm-muted);
+}
+
+/* ---------- Misc ---------- */
+html[data-theme="dark"] #preloader {
+  background: var(--dm-bg);
+}
+
+/* Smooth colour change when the visitor flips the switch (not on page load) */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+  }
+}
