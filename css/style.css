@@ -28,6 +28,20 @@ a:focus {
   text-decoration: none;
 }
 
+/* Visible focus ring for keyboard users only */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+.form-control:focus-visible {
+  outline: 2px solid #1bb1dc;
+  outline-offset: 2px;
+}
+
+/* Sections receive focus after in-page navigation; no ring needed there */
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+
 p {
   padding: 0;
   margin: 0 0 30px 0;
@@ -542,6 +556,7 @@ h6 {
 
 #about .about-img img {
   width: 100%;
+  height: auto;
   border: 8px solid #fff;
   transition: 0.5s;
 }
@@ -729,11 +744,13 @@ h6 {
 /* Features Section
 --------------------------------*/
 
-#features {
+#features,
+#it_services {
   padding: 80px 0;
 }
 
-#features h4 {
+#features h4,
+#it_services h4 {
   font-weight: 600;
   font-size: 24px;
 }
@@ -1066,14 +1083,14 @@ h6 {
   background-color: #1bb1dc;
 }
 
-/* Pricing Section
+/* Training Section
 --------------------------------*/
 
-#pricing {
+#training {
   padding: 80px 0;
 }
 
-#pricing .card {
+#training .card {
   border: 0;
   border-radius: 0px;
   box-shadow: 0 3px 0px 0 rgba(65, 62, 102, 0.08);
@@ -1082,7 +1099,7 @@ h6 {
   position: relative;
 }
 
-#pricing .card:after {
+#training .card:after {
   content: "";
   position: absolute;
   top: 0;
@@ -1093,47 +1110,47 @@ h6 {
   transition: 0.5s;
 }
 
-#pricing .card:hover {
+#training .card:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
 }
 
-#pricing .card:hover:after {
+#training .card:hover:after {
   width: 100%;
 }
 
-#pricing .card .card-header {
+#training .card .card-header {
   background-color: white;
   border-bottom: 0px;
   -moz-text-align-last: center;
   text-align-last: center;
 }
 
-#pricing .card .card-title {
+#training .card .card-title {
   margin-bottom: 16px;
   color: #535074;
 }
 
-#pricing .card .card-block {
+#training .card .card-block {
   padding-top: 0;
   text-align: center;
 }
 
-#pricing .card .list-group-item {
+#training .card .list-group-item {
   border: 0px;
   padding: 6px;
   color: #413e66;
   font-weight: 300;
 }
 
-#pricing .card h3 {
+#training .card h3 {
   font-size: 64px;
   margin-bottom: 0px;
   color: #535074;
 }
 
-#pricing .card h3 .currency {
+#training .card h3 .currency {
   font-size: 30px;
   position: relative;
   font-weight: 400;
@@ -1141,17 +1158,17 @@ h6 {
   letter-spacing: 0px;
 }
 
-#pricing .card h3 .period {
+#training .card h3 .period {
   font-size: 16px;
   color: #6c67a3;
   letter-spacing: 0px;
 }
 
-#pricing .card .list-group {
+#training .card .list-group {
   margin-bottom: 15px;
 }
 
-#pricing .card .btn {
+#training .card .btn {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 500;
@@ -1165,7 +1182,7 @@ h6 {
   color: #fff;
 }
 
-#pricing .card .btn:hover {
+#training .card .btn:hover {
   background: #0a98c0;
 }
 
@@ -1505,11 +1522,11 @@ h6 {
     padding-top: 30px;
   }
 
-  #pricing {
+  #training {
     padding-bottom: 30px;
   }
 
-  #pricing .card {
+  #training .card {
     margin-bottom: 50px;
   }
 }
@@ -1575,5 +1592,82 @@ h6 {
 @media (max-width: 574px) {
   #footer .footer-top .social-links a {
     margin-bottom: 25px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Usability additions
+--------------------------------------------------------------*/
+
+/* Compact bullet lists in the Marketing / IT services sections */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.feature-list li {
+  position: relative;
+  padding: 4px 0 4px 22px;
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  width: 7px;
+  height: 7px;
+  border: 2px solid #1bb1dc;
+  border-radius: 50%;
+}
+
+/* Call-to-action buttons in the "How To Reach Us" section */
+.reach-us-actions .btn-cta {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  padding: 10px 28px;
+  border: 2px solid #1bb1dc;
+  border-radius: 4px;
+  background: #1bb1dc;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.reach-us-actions .btn-cta:hover,
+.reach-us-actions .btn-cta:focus {
+  background: #0a98c0;
+  border-color: #0a98c0;
+  color: #fff;
+}
+
+.reach-us-actions .btn-cta-outline {
+  background: transparent;
+  color: #1bb1dc;
+}
+
+/* Clickable phone numbers / emails in the footer */
+#footer .footer-top p a {
+  color: inherit;
+  word-break: break-word;
+}
+
+#footer .footer-top p a:hover {
+  color: #1bb1dc;
+}
+
+/* Turn off decorative motion for visitors who ask for less of it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
