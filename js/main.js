@@ -22,6 +22,57 @@
     }
   });
 
+  /*
+   * Dark mode toggle.
+   * The initial theme is set by the inline script in <head> (saved choice, or the
+   * visitor's system setting). Clicking the button flips it and remembers the choice.
+   */
+  var root = document.documentElement;
+  var $themeToggle = $(".theme-toggle");
+  var $themeColor = $('meta[name="theme-color"]');
+
+  function savedTheme() {
+    try {
+      return localStorage.getItem("theme");
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    var next = theme === "dark" ? "light" : "dark";
+    $themeToggle.attr({
+      "aria-label": "Switch to " + next + " mode",
+      title: "Switch to " + next + " mode",
+    });
+    $themeColor.attr("content", theme === "dark" ? "#1d1b36" : "#413e66");
+  }
+
+  applyTheme(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+  $themeToggle.on("click", function () {
+    var theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.classList.add("theme-transition");
+    applyTheme(theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+    window.setTimeout(function () {
+      root.classList.remove("theme-transition");
+    }, 350);
+  });
+
+  // Follow the system setting live, until the visitor makes their own choice
+  if (window.matchMedia) {
+    var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    var onSystemChange = function (e) {
+      if (!savedTheme()) applyTheme(e.matches ? "dark" : "light");
+    };
+    if (darkQuery.addEventListener) darkQuery.addEventListener("change", onSystemChange);
+    else if (darkQuery.addListener) darkQuery.addListener(onSystemChange);
+  }
+
   // Initiate the wowjs animation library (skipped when reduced motion is requested)
   if (!reduceMotion && typeof WOW !== "undefined") {
     new WOW().init();
